@@ -1,0 +1,20 @@
+<div *ngIf="isAuth; else elseBlock">
+  <mat-toolbar>
+    Inicio
+    <div class="example-fill-remaining-space"></div>
+    <div>
+      <button mat-button>CUENTA</button>
+      <button mat-button>LOGOUT</button>
+    </div>
+  </mat-toolbar>
+</div>
+<ng-template #elseBlock>
+  <mat-toolbar>
+    Feed
+    <div class="example-fill-remaining-space"></div>
+    <div>
+      <button mat-button>LOGIN</button>
+      <button mat-button>REGISTER</button>
+    </div>
+  </mat-toolbar>
+</ng-template>

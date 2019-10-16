@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post-input.component.scss']
 })
 export class PostInputComponent implements OnInit {
-
+  isShow = false;
   constructor() { }
 
   ngOnInit() {
   }
 
+  openPost() {
+    this.isShow = !this.isShow;
+  }
 }

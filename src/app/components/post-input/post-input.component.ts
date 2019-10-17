@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostInputComponent implements OnInit {
   isShow = false;
+  isAuth = true;
   constructor() { }
 
   ngOnInit() {

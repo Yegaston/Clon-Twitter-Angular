@@ -14,6 +14,8 @@ import { MainComponent } from './components/main/main.component';
 import { PostComponent } from './components/post/post.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PostInputComponent } from './components/post-input/post-input.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -23,6 +25,8 @@ import { PostInputComponent } from './components/post-input/post-input.component
     PostComponent,
     NavbarComponent,
     PostInputComponent,
+    RegisterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

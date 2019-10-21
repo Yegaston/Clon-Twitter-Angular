@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  margin: 2vh;
+  justify-content: center;
+}
+.cardSize {
+  max-width: 400px;
+  min-width: 400px;
+  justify-content: center;
+}
+
+.center-justify {
+  text-align: center;
+  padding: 2px;
+}
+.inputSize {
+  max-width: 400px;
+  min-width: 400px;
+}
+.inputSizeHalf {
+  max-width: 200px;
+  min-width: 200px;
+}
+
+.block-button {
+  width: 100%;
+}
+
+.example-header-image {
+  background-size: cover;
+}

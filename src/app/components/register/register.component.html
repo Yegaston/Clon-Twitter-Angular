@@ -1,48 +1,63 @@
-<form [formGroup]="userToRegister" (ngSubmit)="onSubmit()">
-  <div class="container">
-    <mat-card class="cardSize">
-      <mat-card-title class="center-justify">Registro!</mat-card-title>
+<form class="container" [formGroup]="registerFrom">
+  <mat-card class="cardSize">
+    <mat-card-title class="center-justify">Registro!</mat-card-title>
 
-      <mat-card-content class="center-content">
-        <mat-form-field class="inputSize" appearance="outline">
-          <mat-label>Email</mat-label>
-          <input matInput placeholder="Email" formControlName="email" />
-        </mat-form-field>
+    <mat-card-content class="center-content">
+      <mat-form-field class="inputSize" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          placeholder="Email"
+          name="email"
+          formControlName="email"
+        />
+      </mat-form-field>
 
-        <mat-form-field class="inputSize" appearance="outline">
-          <mat-label>Username</mat-label>
-          <input matInput placeholder="Username" formControlName="username" />
-        </mat-form-field>
+      <mat-form-field class="inputSize" appearance="outline">
+        <mat-label>Username</mat-label>
+        <input
+          matInput
+          placeholder="Username"
+          name="username"
+          formControlName="username"
+        />
+      </mat-form-field>
 
-        <mat-form-field class="inputSize" appearance="outline">
-          <mat-label>Password</mat-label>
-          <input matInput placeholder="Password" formControlName="password" />
-        </mat-form-field>
+      <mat-form-field class="inputSize" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          placeholder="Password"
+          name="password"
+          formControlName="password"
+        />
+      </mat-form-field>
 
-        <mat-form-field class="inputSize" appearance="outline">
-          <mat-label>Confirm Password</mat-label>
-          <input
-            matInput
-            placeholder="Confirm password"
-            formControlName="confirmPassword"
-          />
-        </mat-form-field>
-      </mat-card-content>
+      <mat-form-field class="inputSize" appearance="outline">
+        <mat-label>Confirm Password</mat-label>
+        <input
+          matInput
+          placeholder="Confirm password"
+          name="confirmPassword"
+          formControlName="confirmPassword"
+        />
+      </mat-form-field>
+    </mat-card-content>
 
-      <mat-card-actions>
-        <button
-          mat-flat-button
-          color="primary"
-          type="submit"
-          class="block-button"
-        >
-          Register
-        </button>
-      </mat-card-actions>
+    <mat-card-actions>
+      <button
+        mat-flat-button
+        color="primary"
+        type="submit"
+        class="block-button"
+        (click)="onClickSubmit()"
+      >
+        Register
+      </button>
+    </mat-card-actions>
 
-      <mat-card-footer style="padding: 5px;">
-        <p>When you press register, you accept our termins</p>
-      </mat-card-footer>
-    </mat-card>
-  </div>
+    <mat-card-footer style="padding: 5px;">
+      <p>When you press register, you accept our termins</p>
+    </mat-card-footer>
+  </mat-card>
 </form>

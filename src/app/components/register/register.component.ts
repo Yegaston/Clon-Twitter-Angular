@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -7,18 +7,23 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  userToRegister = new FormGroup({
-    email: new FormControl(''),
-    password: new FormControl(''),
-    confirmPassword: new FormControl(''),
-    username: new FormControl('')
-  });
+  registerFrom: FormGroup;
 
-  constructor() { }
+  constructor(private fb: FormBuilder) {
+    this.createForm();
+  }
 
-  onSubmit() {
+  createForm() {
+    this.registerFrom = this.fb.group({
+      email: [''],
+      username: [''],
+      password: [''],
+      confirmPassword: ['']
+    });
+  }
+  onClickSubmit() {
     // TODO: Use EventEmitter with form value
-    console.log(this.userToRegister.value);
+    console.log(this.registerFrom.value);
   }
 
 

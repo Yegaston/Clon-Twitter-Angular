@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { User } from 'src/app/models/User';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +11,7 @@ import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 export class RegisterComponent implements OnInit {
   registerFrom: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private auth: AuthService) {
     this.createForm();
   }
 
@@ -22,6 +24,16 @@ export class RegisterComponent implements OnInit {
     });
   }
   onClickSubmit() {
+
+    const { username, email, password, confirmPassword } = this.registerFrom.value;
+    const userToRegister: User = {
+      username,
+      email,
+      password
+    };
+    const res = this.auth.registerUser(userToRegister);
+    console.log(res);
+
     // TODO: Use EventEmitter with form value
     console.log(this.registerFrom.value);
   }

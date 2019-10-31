@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, EmailValidator } from '@angular/forms';
+import { User } from 'src/app/models/User';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private auth: AuthService) {
     this.createForm();
   }
 
@@ -21,8 +23,14 @@ export class LoginComponent implements OnInit {
     });
   }
   onClickSubmit() {
-    // TODO: Use EventEmitter with form value
-    console.log(this.loginForm.value);
+    const { email, password } = this.loginForm.value;
+    const userToLogin: User = { email, password };
+
+    const res = this.auth.loginUser(userToLogin);
+    console.log(res);
+
+    console.log(userToLogin);
+
   }
 
 

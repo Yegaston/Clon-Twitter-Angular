@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class RegisterComponent implements OnInit {
   registerFrom: FormGroup;
 
-  constructor(private fb: FormBuilder, private auth: AuthService) {
+  constructor(private fb: FormBuilder, private authService: AuthService) {
     this.createForm();
   }
 
@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit {
       email,
       password
     };
-    const res = this.auth.registerUser(userToRegister);
+    const res = this.authService.registerUser(userToRegister);
     console.log(res);
 
     // TODO: Use EventEmitter with form value

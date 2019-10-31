@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, EmailValidator } from '@angular/forms';
 import { User } from 'src/app/models/User';
 import { AuthService } from 'src/app/services/auth.service';
-
+import { NavbarComponent } from '../navbar/navbar.component';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private auth: AuthService) {
+  constructor(private fb: FormBuilder, private authService: AuthService) {
     this.createForm();
   }
 
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     const { email, password } = this.loginForm.value;
     const userToLogin: User = { email, password };
 
-    const res = this.auth.loginUser(userToLogin);
+    const res = this.authService.loginUser(userToLogin);
     console.log(res);
 
     console.log(userToLogin);

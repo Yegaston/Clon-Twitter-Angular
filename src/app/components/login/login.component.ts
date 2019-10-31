@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, EmailValidator } from '@angular/forms';
 import { User } from 'src/app/models/User';
 import { AuthService } from 'src/app/services/auth.service';
-import { NavbarComponent } from '../navbar/navbar.component';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

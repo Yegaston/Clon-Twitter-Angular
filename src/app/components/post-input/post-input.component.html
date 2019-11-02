@@ -1,26 +1,38 @@
 <div *ngIf="isAuth">
   <div *ngIf="isShow; else elseBlock" class="container">
-    <mat-card class="cardWidth">
-      <mat-card-header>
-        <mat-card-title>Escribe algo...</mat-card-title>
-        <div class="example-fill-remaining-space"></div>
-        <mat-icon
-          aria-hidden="false"
-          aria-label="Example home icon"
-          (click)="openPost()"
-          >close</mat-icon
-        >
-      </mat-card-header>
-      <hr />
-      <mat-card-content>
-        <textarea placeholder="Twetear" class="textareaSize"></textarea>
-      </mat-card-content>
-      <mat-card-footer align="center" style="padding: 5px">
-        <button class="button-block" mat-flat-button color="primary">
-          Tweet
-        </button>
-      </mat-card-footer>
-    </mat-card>
+    <form [formGroup]="postForm">
+      <mat-card class="cardWidth">
+        <mat-card-header>
+          <mat-card-title>Escribe algo...</mat-card-title>
+          <div class="example-fill-remaining-space"></div>
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            (click)="openPost()"
+            >close</mat-icon
+          >
+        </mat-card-header>
+        <hr />
+        <mat-card-content>
+          <textarea
+            placeholder="Twetear"
+            class="textareaSize"
+            formControlName="tweet"
+            name="tweet"
+          ></textarea>
+        </mat-card-content>
+        <mat-card-footer align="center" style="padding: 5px">
+          <button
+            class="button-block"
+            mat-flat-button
+            color="primary"
+            (click)="testing()"
+          >
+            Tweet
+          </button>
+        </mat-card-footer>
+      </mat-card>
+    </form>
   </div>
 
   <ng-template #elseBlock>
